@@ -8,15 +8,13 @@
 </p>
 
 
-# Semantics4BIM
+# Semantics4BIM API
 
 Semantics4BIM is a platform for easily create, update and manage standards-compliant data dictionaries. More information on https://semantics4bim.com/
 
-# API
+## How to start
 
 The current set of APIs can be viewed and tested using Postman.
-
-## How to start
 
 - [Download Postman | Get Started for Free](https://www.postman.com/downloads/)
 - Download [Semantics4BIM_Hackathon_v1.postman_collection.json](/Semantics4BIM_Hackathon_v1.postman_collection.json) file
@@ -29,7 +27,7 @@ The current set of APIs can be viewed and tested using Postman.
 - You can directly generate client code in various languages through Postman
   - More information here [Generating client code | Postman Learning Center](https://learning.postman.com/docs/sending-requests/generate-code-snippets/)
 
-# Documentation
+## Documentation
 
 - [Modèles d’objets numériques - buildingSMART France.pdf](https://mediaconstruct.sharepoint.com/:b:/s/Hackathon-Semantics4BIM/EYh7FVo6c7FDtVyWzWPSLl8BjTj-UyiCs39flZSZyLQ0_w?e=zHduW7)
 - [Les systèmes de classification et le BIM - buildingSMART France.pdf](https://mediaconstruct.sharepoint.com/:b:/s/Hackathon-Semantics4BIM/ESQYDrxaFsZCrIfXoeTxQ7EBQ5xilqz7OrKYW7BZc3rfkg?e=uftWrO)

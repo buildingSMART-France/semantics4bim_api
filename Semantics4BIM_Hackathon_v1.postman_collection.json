@@ -1,0 +1,1176 @@
+{
+	"info": {
+		"_postman_id": "ca730a92-a8a7-4de3-9c99-f25763dbdffa",
+		"name": "SEMANTICS4BIM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23522780"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "AUTHENTICATE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"JWT\", jsonData.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFlMjRhN2I2NzFjMjAwMWQ5ZTZhNjMiLCJsb2dpbiI6InN1cGVyYWRtaW4iLCJmaXJzdE5hbWUiOiJzdXBlciIsImxhc3ROYW1lIjoiYWRtaW4iLCJlbWFpbCI6InN1cGVyQGFkbWluLm9yZyIsImNvbXBhbnkiOiIiLCJwb3NpdGlvbiI6IiIsImxhbmdLZXkiOiJlcyIsInJvbGVzIjpbIlJPTEVfU1VQRVJBRE1JTiJdLCJhY3RpdmUiOnRydWUsImdyb3VwIjpudWxsLCJncm91cHMiOlsiNjFhZTI0YTliNjcxYzIwMDFkOWU2YTY3Il0sImNyZWF0ZWRCeSI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMSIsImNyZWF0ZWREYXRlIjoiMjAyMS0xMi0wNlQxNDo1NjozOS43NzZaIiwibGFzdE1vZGlmaWVkQnkiOiIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEiLCJsYXN0TW9kaWZpZWREYXRlIjoiMjAyMS0xMi0wNlQxNDo1Njo0Mi4yMzlaIiwibGFzdENvbm5lY3Rpb24iOiIyMDIxLTEyLTA2VDE1OjM0OjI4LjU2OFoiLCJleHAiOjE2NDM5ODg4OTcsImlhdCI6MTYzODgwNDg5N30.wgOqpZVTIPp2v1oqRzJVcibNjKtD7po71RROJMbDIos",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\" : \"your account\",\r\n    \"password\": \"your password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "ADD AREA OF EXPERTISE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/user/62164b3e00cc0c2004398f33/areaOfExpertise/625ee0f0353b0150104dc73e",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"62164b3e00cc0c2004398f33",
+								"areaOfExpertise",
+								"625ee0f0353b0150104dc73e"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REMOVE AREA OF EXPERTISE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/user/621292d8b234e6b050cb8ed4/areaOfExpertise/6246be22d28650de881b9116",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"621292d8b234e6b050cb8ed4",
+								"areaOfExpertise",
+								"6246be22d28650de881b9116"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LANGUAGE",
+			"item": [
+				{
+					"name": "LIST LANGUAGE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/language",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"language"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LANGUAGE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/language/6304955b7bc35c6868151fb5",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"language",
+								"6304955b7bc35c6868151fb5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DICTIONARY",
+			"item": [
+				{
+					"name": "LIST DICTIONARY",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"populate\" : \"users\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/dictionary",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"dictionary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DICTIONARY",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/dictionary/62dfbeb92abcb133749263e2?withProperties=true&withSubjects=true",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"dictionary",
+								"62dfbeb92abcb133749263e2"
+							],
+							"query": [
+								{
+									"key": "withProperties",
+									"value": "true"
+								},
+								{
+									"key": "withSubjects",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE DICTIONARY",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": {\r\n        \"texts\": [\r\n            {\r\n            \"text\": \"\",\r\n            \"language\": \"\"\r\n            }\r\n        ]\r\n    },\r\n    \"uri\": \"\",\r\n    \"active\": true,\r\n    \"organizationNameOwner\": \"\",\r\n    \"version\": \"1.0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/dictionary",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"dictionary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE DICTIONARY",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": {\r\n        \"texts\": [\r\n            {\r\n            \"text\": \"\",\r\n            \"language\": \"\"\r\n            }\r\n        ]\r\n    },\r\n    \"uri\": \"\",\r\n    \"active\": true,\r\n    \"organizationNameOwner\": \"\",\r\n    \"version\": \"1.0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/dictionary/62dfbeb92abcb133749263e2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"dictionary",
+								"62dfbeb92abcb133749263e2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE DICTIONARY",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/dictionary/62dfbeb92abcb133749263e2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"dictionary",
+								"62dfbeb92abcb133749263e2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AREA OF EXPERTISE",
+			"item": [
+				{
+					"name": "LIST  AREA OF EXPERTISE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"populates\" : \"properties\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/areasofexpertise",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"areasofexpertise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET AREA OF EXPERTISE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"populates\" : \"properties\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/subject/62dfda5b2885d32e549f7679",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"subject",
+								"62dfda5b2885d32e549f7679"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD RELATION TO AREA OF EXPERTISE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"areaId\": \"string\",\r\n    \"relationId\": \"string\",\r\n    \"relationType\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/areasofexpertise/addRelationToAreaOfExpertise",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"areasofexpertise",
+								"addRelationToAreaOfExpertise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE RELATION TO AREA OF EXPERTISE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"areaId\": \"string\",\r\n    \"relationId\": \"string\",\r\n    \"relationType\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/areasofexpertise/removeRelationToAreaOfExpertise",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"areasofexpertise",
+								"removeRelationToAreaOfExpertise"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DIMENSION",
+			"item": [
+				{
+					"name": "LIST DIMENSION",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/dimension",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"dimension"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DIMENSION",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/dimension/62dfbeba2abcb13374926427",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"dimension",
+								"62dfbeba2abcb13374926427"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PROPERTY",
+			"item": [
+				{
+					"name": "LIST PROPERTY",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"populate\":\"units\", \"pageSize\" : 5000, \"maxPageSize\":5000}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/property",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PROPERTY",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"populate\":\"units\", \"pageSize\" : 5000, \"maxPageSize\":5000}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/property/62dfbeba2abcb13374926445",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"62dfbeba2abcb13374926445"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE PROPERTY",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dataType\": \"STRING\",\r\n  \"dataFormat\": \"csffsdssdf\",\r\n  \"units\": [ \"6228ad8bec45188574f70253\"],\r\n  \"boundaryValues\":  [{\r\n        \"minimumIncluded\": 0,\r\n        \"maximumIncluded\": 1,\r\n        \"minimum\": {\r\n            \"unit\" : \"6228ad8bec45188574f70253\"          ,\r\n            \"values\": [ { \"order\" : 1, \"value\" :  { \"nominalValue\" : \"10\"}}],\r\n            \"language\":\"62135a9af63f263450d16bb6\"\r\n        },\r\n        \"maximum\": {\r\n            \"unit\" : \"6228ad8bec45188574f70253\",\r\n            \"values\": [ { \"order\" : 1, \"value\" :  { \"nominalValue\" : \"10\"}}]\r\n            ,\r\n            \"language\":\"62135a9af63f263450d16bb6\"\r\n        }\r\n  }],\r\n  \"status\": 0,\r\n  \"replacedObjects\": [],\r\n  \"names\":       \r\n   [{\"texts\" : [{\r\n          \"text\": \"kgftttsppi\",\r\n          \"language\": \"62135a9af63f263450d16bb6\"\r\n      }]}\r\n   ],\r\n   \"possibleValues\":[],\r\n   \"symbols\":[],\r\n   \"quantityKinds\":[],\r\n   \"majorVersion\" : 1,\r\n  \"minorVersion\": 34,\r\n  \"dateOfCreation\": \"20220222\" \r\n\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/property",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE PROPERTY",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dataType\": \"STRING\",\r\n  \"dataFormat\": \"csffsdssdf\",\r\n  \"units\": [ \"6228ad8bec45188574f70253\"],\r\n  \"boundaryValues\":  [{\r\n        \"minimumIncluded\": 0,\r\n        \"maximumIncluded\": 1,\r\n        \"minimum\": {\r\n            \"unit\" : \"6228ad8bec45188574f70253\"          ,\r\n            \"values\": [ { \"order\" : 1, \"value\" :  { \"nominalValue\" : \"10\"}}],\r\n            \"language\":\"62135a9af63f263450d16bb6\"\r\n        },\r\n        \"maximum\": {\r\n            \"unit\" : \"6228ad8bec45188574f70253\",\r\n            \"values\": [ { \"order\" : 1, \"value\" :  { \"nominalValue\" : \"10\"}}]\r\n            ,\r\n            \"language\":\"62135a9af63f263450d16bb6\"\r\n        }\r\n  }],\r\n  \"status\": 0,\r\n  \"replacedObjects\": [],\r\n  \"names\":       \r\n   [{\"texts\" : [{\r\n          \"text\": \"kgftttsppi\",\r\n          \"language\": \"62135a9af63f263450d16bb6\"\r\n      }]}\r\n   ],\r\n   \"possibleValues\":[],\r\n   \"symbols\":[],\r\n   \"quantityKinds\":[],\r\n   \"majorVersion\" : 1,\r\n  \"minorVersion\": 34,\r\n  \"dateOfCreation\": \"20220222\" \r\n\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/property/62dfbeba2abcb13374926445",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"62dfbeba2abcb13374926445"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE PROPERTY",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/property/62dfbeba2abcb13374926445",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"62dfbeba2abcb13374926445"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE DRAFT PROPERTY wip",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"62dfbeba2abcb13374926445\",\r\n    \"modificationUnitOfWork\": \"xxxxxxxxxxxxxx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/property/clone",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"clone"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SUBJECT",
+			"item": [
+				{
+					"name": "LIST SUBJECT",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"populate\" : \"properties\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/subject/list",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"subject",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SUBJECT",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"populate\" : \"properties\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/subject/62dfbebc2abcb13374926d5a",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"subject",
+								"62dfbebc2abcb13374926d5a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE SUBJECT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"majorVersion\" : 1,\r\n  \"minorVersion\": 34,\r\n  \"dateOfCreation\": \"20220222\" ,\r\n  \"names\":       \r\n   [{\"texts\" : [{\r\n          \"text\": \"class 4\",\r\n          \"language\": \"62135a9af63f263450d16bb6\"\r\n      }]}\r\n   ],\r\n   \"properties\":[],\r\n   \"connectedSubjects\": [],\r\n   \"filters\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/subject",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"subject"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE SUBJECT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"majorVersion\" : 1,\r\n  \"minorVersion\": 34,\r\n  \"dateOfCreation\": \"20220222\" ,\r\n  \"names\":       \r\n   [{\"texts\" : [{\r\n          \"text\": \"class 4\",\r\n          \"language\": \"62135a9af63f263450d16bb6\"\r\n      }]}\r\n   ],\r\n   \"properties\":[],\r\n   \"connectedSubjects\": [],\r\n   \"filters\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/subject/62dfbebc2abcb13374926d5a",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"subject",
+								"62dfbebc2abcb13374926d5a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE SUBJECT",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/subject/62dfbebc2abcb13374926d5a",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"subject",
+								"62dfbebc2abcb13374926d5a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE DRAFT SUBJECT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"62dfbebc2abcb13374926d5a\",\r\n    \"modificationUnitOfWork\": \"xxxxxxxxxxxxxx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/subject/clone",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"subject",
+								"clone"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UNIT",
+			"item": [
+				{
+					"name": "LIST UNIT",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"populate\":\"createdBy\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/unit",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"unit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE UNIT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                    \"scale\": \"LINEAR\",\r\n                    \"base\": \"TEN\",\r\n                    \"dimension\": \"621c080771e57cca8831f00c\",\r\n                    \"symbol\": {\"texts\" : [{\r\n                    \"text\": \"dkg\",\r\n                    \"language\": \"62135a9af63f263450d16bb6\"\r\n                    }]},\r\n                    \"coefficient\": {\r\n                        \"numerator\": 1,\r\n                        \"denominator\": 3\r\n                    },\r\n                    \"offset\": {\r\n                        \"numerator\": 1,\r\n                        \"denominator\": 3\r\n                    },\r\n  \"names\":       \r\n   [{\"texts\" : [{\r\n          \"text\": \"fkg\",\r\n          \"language\": \"62135a9af63f263450d16bb6\"\r\n      }]}\r\n   ],\r\n   \"symbols\":[],\r\n   \"quantityKinds\":[],\r\n   \"majorVersion\" : 1,\r\n  \"minorVersion\": 34,\r\n  \"dateOfCreation\": \"20220222\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/unit",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"unit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WORKSPACE",
+			"item": [
+				{
+					"name": "LIST WORKSPACE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/changeRequest",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"changeRequest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET WORKSPACE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/unitOfWork/62dfdd152885d32e549f7a00",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"unitOfWork",
+								"62dfdd152885d32e549f7a00"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE WORKSPACE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Workspace test\",\r\n  \"owner\": \"627b843411765c3ab43a6794\",\r\n  \"dictionary\": \"62dd937cc38dcf31b053752d\",\r\n  \"createdBy\": \"627b843411765c3ab43a6794\",\r\n  \"createdDate\": \"2022-08-23T10:14:28.268Z\",\r\n  \"lastModifiedBy\": null,\r\n  \"lastModifiedDate\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/unitOfWork",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"unitOfWork"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE WORKSPACE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Workspace test 1\",\r\n  \"owner\": \"627b843411765c3ab43a6794\",\r\n  \"dictionary\": \"62dd937cc38dcf31b053752d\",\r\n  \"createdBy\": \"627b843411765c3ab43a6794\",\r\n  \"createdDate\": \"2022-08-23T10:14:28.268Z\",\r\n  \"lastModifiedBy\": null,\r\n  \"lastModifiedDate\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/unitOfWork/62dfdd152885d32e549f7a00",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"unitOfWork",
+								"62dfdd152885d32e549f7a00"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE WORKSPACE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/unitOfWork/62dfdd152885d32e549f7a00",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"unitOfWork",
+								"62dfdd152885d32e549f7a00"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SUBMIT WORKSPACE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"string\",\r\n    \"explanation\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/unitOfWork/submit",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"unitOfWork",
+								"submit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CHANGE REQUEST",
+			"item": [
+				{
+					"name": "LIST CHANGE REQUEST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/changeRequest",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"changeRequest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CHANGE REQUEST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/changeRequest/62dfd6b02885d32e549f74d4",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"changeRequest",
+								"62dfd6b02885d32e549f74d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE CHANGE REQUEST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"names\": [\r\n    {\r\n      \"uniqueId\": null,\r\n      \"texts\": [\r\n        {\r\n          \"text\": \"Workjur\",\r\n          \"language\": null,\r\n          \"uniqueId\": null\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"nature\": \"XTD_MERGING\",\r\n  \"requestExternalStatus\": \"XTD_PENDING_ASSIGNEMENT\",\r\n  \"applicant\": \"627b843411765c3ab43a6794\",\r\n  \"newProperties\": [],\r\n  \"newSubjects\": [\r\n    \"6304a63cb6a6282ce4c19da7\",\r\n    \"6304a646b6a6282ce4c19ddf\"\r\n  ],\r\n  \"newObjects\": [],\r\n  \"expertsWithStatus\": [],\r\n  \"applicantExplanation\": {\r\n    \"uniqueId\": \"565dce39-ef61-4e53-986b-9c26de63578d\",\r\n    \"texts\": [\r\n      {\r\n        \"text\": \"Explanation\",\r\n        \"language\": null,\r\n        \"uniqueId\": \"a45c9ecd-f799-43cc-9a30-855d535e6f24\"\r\n      }\r\n    ]\r\n  },\r\n  \"createdDate\": \"2022-08-23T10:05:08.860Z\",\r\n  \"majorVersionDate\": \"Tue Aug 23 2022\",\r\n  \"majorVersion\": 1,\r\n  \"minorVersionDate\": \"Tue Aug 23 2022\",\r\n  \"minorVersion\": 1,\r\n  \"dictionary\": \"62dd937cc38dcf31b053752d\",\r\n  \"areasOfExpertise\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/changeRequest",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"changeRequest"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{JWT}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://151.80.27.24:3000"
+		}
+	]
+}

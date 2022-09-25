@@ -1,5 +1,5 @@
 <p>
-  <a style="text-decoration:none" href="#">
+  <a style="text-decoration:none" href="https://github.com/buildingSMART-France/semantics4bim_api">
     <img src="https://img.shields.io/badge/Current Release-Beta-brightgreen" alt="Info" />
   </a>
   <a style="text-decoration:none" href="https://buildingsmartfrance-mediaconstruct.fr//">

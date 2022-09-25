@@ -1,9 +1,9 @@
 <p>
-  <a style="text-decoration:none">
-    <img src="https://img.shields.io/badge/Current Release-Beta-aquamarine" alt="Info" />
+  <a style="text-decoration:none" href="#">
+    <img src="https://img.shields.io/badge/Current Release-Beta-brightgreen" alt="Info" />
   </a>
   <a style="text-decoration:none" href="https://buildingsmartfrance-mediaconstruct.fr//">
-    <img src="https://img.shields.io/badge/By-buildingSMART France-mediumorchid" alt="bSF" />
+    <img src="https://img.shields.io/badge/By-buildingSMART France-blue" alt="bSF" />
   </a>
 </p>
 

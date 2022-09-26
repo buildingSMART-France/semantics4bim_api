@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ca730a92-a8a7-4de3-9c99-f25763dbdffa",
+		"_postman_id": "4aa31c0c-ddbb-4ffc-852c-a61cb1b589a5",
 		"name": "SEMANTICS4BIM",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "23522780"
@@ -1135,6 +1135,77 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "SEARCH",
+			"item": [
+				{
+					"name": "Search Exact Match",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n  \"searchText\" : \"Coils may also be used\",\r\n  \"searchInDomain\": true,\r\n  \"searchInObject\": true,\r\n  \"searchInAreaOfExpertise\": true,\r\n  \"searchInProperty\": true,\r\n  \"searchInNames\": true,\r\n  \"searchInDefinition\": true,\r\n  \"searchInDescription\": true,\r\n  \"searchOldVersions\": false,\r\n  \"dictionaryId\": null\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/dictionary/transversal/textSearch",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"dictionary",
+								"transversal",
+								"textSearch"
+							]
+						},
+						"description": "textSearch searches for the exact occurrence of a word or set of words"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Match",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n  \"searchText\" : \"Coils may also be used\",\r\n  \"searchInDomain\": true,\r\n  \"searchInObject\": true,\r\n  \"searchInAreaOfExpertise\": true,\r\n  \"searchInProperty\": true,\r\n  \"searchInNames\": true,\r\n  \"searchInDefinition\": true,\r\n  \"searchInDescription\": true,\r\n  \"searchOldVersions\": false,\r\n  \"dictionaryId\": null\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/dictionary/transversal/fullSearch",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"dictionary",
+								"transversal",
+								"fullSearch"
+							]
+						},
+						"description": "fullSearch searches for any phrase containing this word"
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {
@@ -1171,6 +1242,10 @@
 		{
 			"key": "BASE_URL",
 			"value": "http://151.80.27.24:3000"
+		},
+		{
+			"key": "JWT",
+			"value": "[TokenNeedToBeReplaced]"
 		}
 	]
 }

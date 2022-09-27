@@ -15,19 +15,30 @@ Semantics4BIM is a platform for easily create, update and manage standards-compl
 
 ## How to start
 
-The current set of APIs can be viewed and tested using Postman.
+The current set of APIs can be viewed and tested using Swagger or Postman.
+
+Swagger (Webpage)
+
+- https://app.swaggerhub.com/apis/bSFrance/S4BIM/0.1.1
+- Open `AUTH` tab and click `Try it out` and fill your login info in the request body, then click `Execute` button to send the request and get a `token` like { "token": "`ValueOfToken`"} . 
+- Click `Authorize` green button in the top and right and fill the `ValueOfToken`.
+- And now you can play with all other API with the same logic.  
+
+Postman (Desktop app)
 
 - [Download Postman | Get Started for Free](https://www.postman.com/downloads/)
 - Download [Semantics4BIM_Hackathon_v1.postman_collection.json](/Semantics4BIM_Hackathon_v1.postman_collection.json) file
 - Import this postman collection file to your Postman
 - Open `AUTH` folder and click `AUTHENTICATE` request and fill your login info in the body, then click `Send` button to send the request and get a `token`. 
-- Edit collection Semantics4BIM variables and fill your `token` in `JWT` initial value and current value.
+- Edit collection Semantics4BIM variables and fill your `token` in `JWT` initial value and current v.
 - Now, your are all ready for test and play with all other API, have fun !
 
 ## Tips
 
-- You can directly generate client code in various languages through Postman
-  - More information here [Generating client code | Postman Learning Center](https://learning.postman.com/docs/sending-requests/generate-code-snippets/)
+You can directly generate client code in various languages 
+
+- For Swagger : [Generating Code | SwaggerHub Documentation](https://support.smartbear.com/swaggerhub/docs/apis/generating-code/index.html)
+- For Postman : [Generating client code | Postman Learning Center](https://learning.postman.com/docs/sending-requests/generate-code-snippets/)
 
 ## Documentation
 

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4aa31c0c-ddbb-4ffc-852c-a61cb1b589a5",
+		"_postman_id": "334f8f01-9136-442f-82d8-9406f1610225",
 		"name": "SEMANTICS4BIM",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "23522780"
@@ -38,7 +38,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"login\" : \"your account\",\r\n    \"password\": \"your password\"\r\n}",
+							"raw": "{\r\n\t\"login\": \"yourLogin\",\r\n\t\"password\": \"yourPassword\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -78,22 +78,25 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/api/user/62164b3e00cc0c2004398f33/areaOfExpertise/625ee0f0353b0150104dc73e",
+							"raw": "{{BASE_URL}}/api/user/:userId/areaOfExpertise/:areaOfExpertiseId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"user",
-								"62164b3e00cc0c2004398f33",
+								":userId",
 								"areaOfExpertise",
-								"625ee0f0353b0150104dc73e"
+								":areaOfExpertiseId"
 							],
-							"query": [
+							"variable": [
 								{
-									"key": "",
-									"value": "",
-									"disabled": true
+									"key": "userId",
+									"value": "62164b3e00cc0c2004398f33"
+								},
+								{
+									"key": "areaOfExpertiseId",
+									"value": "6246be22d28650de881b9116"
 								}
 							]
 						}
@@ -115,16 +118,26 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/api/user/621292d8b234e6b050cb8ed4/areaOfExpertise/6246be22d28650de881b9116",
+							"raw": "{{BASE_URL}}/api/user/:userId/areaOfExpertise/:areaOfExpertiseId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"user",
-								"621292d8b234e6b050cb8ed4",
+								":userId",
 								"areaOfExpertise",
-								"6246be22d28650de881b9116"
+								":areaOfExpertiseId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "62164b3e00cc0c2004398f33"
+								},
+								{
+									"key": "areaOfExpertiseId",
+									"value": "6246be22d28650de881b9116"
+								}
 							]
 						}
 					},
@@ -159,14 +172,20 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/api/language/6304955b7bc35c6868151fb5",
+							"raw": "{{BASE_URL}}/api/language/:languageId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"language",
-								"6304955b7bc35c6868151fb5"
+								":languageId"
+							],
+							"variable": [
+								{
+									"key": "languageId",
+									"value": "6304955b7bc35c6868151fb5"
+								}
 							]
 						}
 					},
@@ -187,7 +206,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"populate\" : \"users\"\r\n}",
+							"raw": "{\r\n    \"populate\": \"user\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -225,14 +244,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/api/dictionary/62dfbeb92abcb133749263e2?withProperties=true&withSubjects=true",
+							"raw": "{{BASE_URL}}/api/dictionary/:dictionaryId?withProperties=true&withSubjects=true",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"dictionary",
-								"62dfbeb92abcb133749263e2"
+								":dictionaryId"
 							],
 							"query": [
 								{
@@ -242,6 +261,12 @@
 								{
 									"key": "withSubjects",
 									"value": "true"
+								}
+							],
+							"variable": [
+								{
+									"key": "dictionaryId",
+									"value": "62dfbeb92abcb133749263e2"
 								}
 							]
 						}
@@ -255,7 +280,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": {\r\n        \"texts\": [\r\n            {\r\n            \"text\": \"\",\r\n            \"language\": \"\"\r\n            }\r\n        ]\r\n    },\r\n    \"uri\": \"\",\r\n    \"active\": true,\r\n    \"organizationNameOwner\": \"\",\r\n    \"version\": \"1.0\"\r\n}",
+							"raw": "{\r\n\t\"name\": {\r\n\t\t\"texts\": [\r\n\t\t\t{\r\n\t\t\t\t\"text\": \"\",\r\n\t\t\t\t\"language\": \"\"\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"uri\": \"\",\r\n\t\"active\": true,\r\n\t\"organizationNameOwner\": \"\",\r\n\t\"version\": \"1.0\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -290,14 +315,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/api/dictionary/62dfbeb92abcb133749263e2",
+							"raw": "{{BASE_URL}}/api/dictionary/:dictionaryId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"dictionary",
-								"62dfbeb92abcb133749263e2"
+								":dictionaryId"
+							],
+							"variable": [
+								{
+									"key": "dictionaryId",
+									"value": "62dfbeb92abcb133749263e2"
+								}
 							]
 						}
 					},
@@ -318,14 +349,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/api/dictionary/62dfbeb92abcb133749263e2",
+							"raw": "{{BASE_URL}}/api/dictionary/:dictionaryId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"dictionary",
-								"62dfbeb92abcb133749263e2"
+								":dictionaryId"
+							],
+							"variable": [
+								{
+									"key": "dictionaryId",
+									"value": "62dfbeb92abcb133749263e2"
+								}
 							]
 						}
 					},
@@ -376,7 +413,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"populates\" : \"properties\"\r\n}",
+							"raw": "{\r\n\t\"populates\": \"properties\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -384,14 +421,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/api/subject/62dfda5b2885d32e549f7679",
+							"raw": "{{BASE_URL}}/api/subject/:subjectId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"subject",
-								"62dfda5b2885d32e549f7679"
+								":subjectId"
+							],
+							"variable": [
+								{
+									"key": "subjectId",
+									"value": "62dfda5b2885d32e549f7679"
+								}
 							]
 						}
 					},
@@ -432,7 +475,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"areaId\": \"string\",\r\n    \"relationId\": \"string\",\r\n    \"relationType\": \"string\"\r\n}",
+							"raw": "{\r\n\t\"areaId\": \"string\",\r\n\t\"relationId\": \"string\",\r\n\t\"relationType\": \"string\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -482,14 +525,20 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/api/dimension/62dfbeba2abcb13374926427",
+							"raw": "{{BASE_URL}}/api/dimension/:dimensionId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"dimension",
-								"62dfbeba2abcb13374926427"
+								":dimensionId"
+							],
+							"variable": [
+								{
+									"key": "dimensionId",
+									"value": "62dfbeba2abcb13374926427"
+								}
 							]
 						}
 					},
@@ -510,7 +559,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"populate\":\"units\", \"pageSize\" : 5000, \"maxPageSize\":5000}",
+							"raw": "{\r\n\t\"populate\": \"units\",\r\n\t\"pageSize\": 5000,\r\n\t\"maxPageSize\": 5000\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -540,7 +589,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \"populate\":\"units\", \"pageSize\" : 5000, \"maxPageSize\":5000}",
+							"raw": "{\r\n\t\"populate\": \"units\",\r\n\t\"pageSize\": 5000,\r\n\t\"maxPageSize\": 5000\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -548,14 +597,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/api/property/62dfbeba2abcb13374926445",
+							"raw": "{{BASE_URL}}/api/property/:propertyId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"property",
-								"62dfbeba2abcb13374926445"
+								":propertyId"
+							],
+							"variable": [
+								{
+									"key": "propertyId",
+									"value": "62dfbeba2abcb13374926445"
+								}
 							]
 						}
 					},
@@ -568,7 +623,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"dataType\": \"STRING\",\r\n  \"dataFormat\": \"csffsdssdf\",\r\n  \"units\": [ \"6228ad8bec45188574f70253\"],\r\n  \"boundaryValues\":  [{\r\n        \"minimumIncluded\": 0,\r\n        \"maximumIncluded\": 1,\r\n        \"minimum\": {\r\n            \"unit\" : \"6228ad8bec45188574f70253\"          ,\r\n            \"values\": [ { \"order\" : 1, \"value\" :  { \"nominalValue\" : \"10\"}}],\r\n            \"language\":\"62135a9af63f263450d16bb6\"\r\n        },\r\n        \"maximum\": {\r\n            \"unit\" : \"6228ad8bec45188574f70253\",\r\n            \"values\": [ { \"order\" : 1, \"value\" :  { \"nominalValue\" : \"10\"}}]\r\n            ,\r\n            \"language\":\"62135a9af63f263450d16bb6\"\r\n        }\r\n  }],\r\n  \"status\": 0,\r\n  \"replacedObjects\": [],\r\n  \"names\":       \r\n   [{\"texts\" : [{\r\n          \"text\": \"kgftttsppi\",\r\n          \"language\": \"62135a9af63f263450d16bb6\"\r\n      }]}\r\n   ],\r\n   \"possibleValues\":[],\r\n   \"symbols\":[],\r\n   \"quantityKinds\":[],\r\n   \"majorVersion\" : 1,\r\n  \"minorVersion\": 34,\r\n  \"dateOfCreation\": \"20220222\" \r\n\r\n\r\n\r\n}",
+							"raw": "{\r\n\t\"dataType\": \"STRING\",\r\n\t\"dataFormat\": \"csffsdssdf\",\r\n\t\"units\": [\r\n\t\t\"6228ad8bec45188574f70253\"\r\n\t],\r\n\t\"boundaryValues\": [\r\n\t\t{\r\n\t\t\t\"minimumIncluded\": 0,\r\n\t\t\t\"maximumIncluded\": 1,\r\n\t\t\t\"minimum\": {\r\n\t\t\t\t\"unit\": \"6228ad8bec45188574f70253\",\r\n\t\t\t\t\"values\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"order\": 1,\r\n\t\t\t\t\t\t\"value\": {\r\n\t\t\t\t\t\t\t\"nominalValue\": \"10\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"language\": \"62135a9af63f263450d16bb6\"\r\n\t\t\t},\r\n\t\t\t\"maximum\": {\r\n\t\t\t\t\"unit\": \"6228ad8bec45188574f70253\",\r\n\t\t\t\t\"values\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"order\": 1,\r\n\t\t\t\t\t\t\"value\": {\r\n\t\t\t\t\t\t\t\"nominalValue\": \"10\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"language\": \"62135a9af63f263450d16bb6\"\r\n\t\t\t}\r\n\t\t}\r\n\t],\r\n\t\"status\": 0,\r\n\t\"replacedObjects\": [],\r\n\t\"names\": [\r\n\t\t{\r\n\t\t\t\"texts\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"text\": \"kgftttsppi\",\r\n\t\t\t\t\t\"language\": \"62135a9af63f263450d16bb6\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t],\r\n\t\"possibleValues\": [],\r\n\t\"symbols\": [],\r\n\t\"quantityKinds\": [],\r\n\t\"majorVersion\": 1,\r\n\t\"minorVersion\": 34,\r\n\t\"dateOfCreation\": \"20220222\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -595,7 +650,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"dataType\": \"STRING\",\r\n  \"dataFormat\": \"csffsdssdf\",\r\n  \"units\": [ \"6228ad8bec45188574f70253\"],\r\n  \"boundaryValues\":  [{\r\n        \"minimumIncluded\": 0,\r\n        \"maximumIncluded\": 1,\r\n        \"minimum\": {\r\n            \"unit\" : \"6228ad8bec45188574f70253\"          ,\r\n            \"values\": [ { \"order\" : 1, \"value\" :  { \"nominalValue\" : \"10\"}}],\r\n            \"language\":\"62135a9af63f263450d16bb6\"\r\n        },\r\n        \"maximum\": {\r\n            \"unit\" : \"6228ad8bec45188574f70253\",\r\n            \"values\": [ { \"order\" : 1, \"value\" :  { \"nominalValue\" : \"10\"}}]\r\n            ,\r\n            \"language\":\"62135a9af63f263450d16bb6\"\r\n        }\r\n  }],\r\n  \"status\": 0,\r\n  \"replacedObjects\": [],\r\n  \"names\":       \r\n   [{\"texts\" : [{\r\n          \"text\": \"kgftttsppi\",\r\n          \"language\": \"62135a9af63f263450d16bb6\"\r\n      }]}\r\n   ],\r\n   \"possibleValues\":[],\r\n   \"symbols\":[],\r\n   \"quantityKinds\":[],\r\n   \"majorVersion\" : 1,\r\n  \"minorVersion\": 34,\r\n  \"dateOfCreation\": \"20220222\" \r\n\r\n\r\n\r\n}",
+							"raw": "{\r\n\t\"dataType\": \"STRING\",\r\n\t\"dataFormat\": \"csffsdssdf\",\r\n\t\"units\": [\r\n\t\t\"6228ad8bec45188574f70253\"\r\n\t],\r\n\t\"boundaryValues\": [\r\n\t\t{\r\n\t\t\t\"minimumIncluded\": 0,\r\n\t\t\t\"maximumIncluded\": 1,\r\n\t\t\t\"minimum\": {\r\n\t\t\t\t\"unit\": \"6228ad8bec45188574f70253\",\r\n\t\t\t\t\"values\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"order\": 1,\r\n\t\t\t\t\t\t\"value\": {\r\n\t\t\t\t\t\t\t\"nominalValue\": \"10\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"language\": \"62135a9af63f263450d16bb6\"\r\n\t\t\t},\r\n\t\t\t\"maximum\": {\r\n\t\t\t\t\"unit\": \"6228ad8bec45188574f70253\",\r\n\t\t\t\t\"values\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"order\": 1,\r\n\t\t\t\t\t\t\"value\": {\r\n\t\t\t\t\t\t\t\"nominalValue\": \"10\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"language\": \"62135a9af63f263450d16bb6\"\r\n\t\t\t}\r\n\t\t}\r\n\t],\r\n\t\"status\": 0,\r\n\t\"replacedObjects\": [],\r\n\t\"names\": [\r\n\t\t{\r\n\t\t\t\"texts\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"text\": \"kgftttsppi\",\r\n\t\t\t\t\t\"language\": \"62135a9af63f263450d16bb6\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t],\r\n\t\"possibleValues\": [],\r\n\t\"symbols\": [],\r\n\t\"quantityKinds\": [],\r\n\t\"majorVersion\": 1,\r\n\t\"minorVersion\": 34,\r\n\t\"dateOfCreation\": \"20220222\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -603,14 +658,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/api/property/62dfbeba2abcb13374926445",
+							"raw": "{{BASE_URL}}/api/property/:propertyId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"property",
-								"62dfbeba2abcb13374926445"
+								":propertyId"
+							],
+							"variable": [
+								{
+									"key": "propertyId",
+									"value": "62dfbeba2abcb13374926445"
+								}
 							]
 						}
 					},
@@ -631,42 +692,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/api/property/62dfbeba2abcb13374926445",
+							"raw": "{{BASE_URL}}/api/property/:propertyId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"property",
-								"62dfbeba2abcb13374926445"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "CREATE DRAFT PROPERTY wip",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"62dfbeba2abcb13374926445\",\r\n    \"modificationUnitOfWork\": \"xxxxxxxxxxxxxx\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+								":propertyId"
+							],
+							"variable": [
+								{
+									"key": "propertyId",
+									"value": "62dfbeba2abcb13374926445"
 								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/api/property/clone",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"api",
-								"property",
-								"clone"
 							]
 						}
 					},
@@ -687,7 +726,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"populate\" : \"properties\"\r\n}",
+							"raw": "{\r\n    \"populate\": \"properties\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -718,7 +757,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"populate\" : \"properties\"\r\n}",
+							"raw": "{\r\n    \"populate\": \"properties\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -726,14 +765,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/api/subject/62dfbebc2abcb13374926d5a",
+							"raw": "{{BASE_URL}}/api/subject/:subjectId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"subject",
-								"62dfbebc2abcb13374926d5a"
+								":subjectId"
+							],
+							"variable": [
+								{
+									"key": "subjectId",
+									"value": "62dfbebc2abcb13374926d5a"
+								}
 							]
 						}
 					},
@@ -746,7 +791,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"majorVersion\" : 1,\r\n  \"minorVersion\": 34,\r\n  \"dateOfCreation\": \"20220222\" ,\r\n  \"names\":       \r\n   [{\"texts\" : [{\r\n          \"text\": \"class 4\",\r\n          \"language\": \"62135a9af63f263450d16bb6\"\r\n      }]}\r\n   ],\r\n   \"properties\":[],\r\n   \"connectedSubjects\": [],\r\n   \"filters\": []\r\n}",
+							"raw": "{\r\n\t\"majorVersion\": 1,\r\n\t\"minorVersion\": 34,\r\n\t\"dateOfCreation\": \"20220222\",\r\n\t\"names\": [\r\n\t\t{\r\n\t\t\t\"texts\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"text\": \"class 4\",\r\n\t\t\t\t\t\"language\": \"62135a9af63f263450d16bb6\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t],\r\n\t\"properties\": [],\r\n\t\"connectedSubjects\": [],\r\n\t\"filters\": []\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -773,7 +818,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"majorVersion\" : 1,\r\n  \"minorVersion\": 34,\r\n  \"dateOfCreation\": \"20220222\" ,\r\n  \"names\":       \r\n   [{\"texts\" : [{\r\n          \"text\": \"class 4\",\r\n          \"language\": \"62135a9af63f263450d16bb6\"\r\n      }]}\r\n   ],\r\n   \"properties\":[],\r\n   \"connectedSubjects\": [],\r\n   \"filters\": []\r\n}",
+							"raw": "{\r\n\t\"majorVersion\": 1,\r\n\t\"minorVersion\": 34,\r\n\t\"dateOfCreation\": \"20220222\",\r\n\t\"names\": [\r\n\t\t{\r\n\t\t\t\"texts\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"text\": \"class 4\",\r\n\t\t\t\t\t\"language\": \"62135a9af63f263450d16bb6\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t],\r\n\t\"properties\": [],\r\n\t\"connectedSubjects\": [],\r\n\t\"filters\": []\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -781,14 +826,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/api/subject/62dfbebc2abcb13374926d5a",
+							"raw": "{{BASE_URL}}/api/subject/:subjectId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"subject",
-								"62dfbebc2abcb13374926d5a"
+								":subjectId"
+							],
+							"variable": [
+								{
+									"key": "subjectId",
+									"value": "62dfbebc2abcb13374926d5a"
+								}
 							]
 						}
 					},
@@ -809,14 +860,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/api/subject/62dfbebc2abcb13374926d5a",
+							"raw": "{{BASE_URL}}/api/subject/:subjectId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"subject",
-								"62dfbebc2abcb13374926d5a"
+								":subjectId"
+							],
+							"variable": [
+								{
+									"key": "subjectId",
+									"value": "62dfbebc2abcb13374926d5a"
+								}
 							]
 						}
 					},
@@ -829,7 +886,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"62dfbebc2abcb13374926d5a\",\r\n    \"modificationUnitOfWork\": \"xxxxxxxxxxxxxx\"\r\n}",
+							"raw": "{\r\n\t\"id\": \"62dfbebc2abcb13374926d5a\",\r\n\t\"modificationUnitOfWork\": \"xxxxxxxxxxxxxx\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -865,7 +922,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \"populate\":\"createdBy\"}",
+							"raw": "{\r\n\t\"populate\": \"createdBy\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -892,7 +949,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n                    \"scale\": \"LINEAR\",\r\n                    \"base\": \"TEN\",\r\n                    \"dimension\": \"621c080771e57cca8831f00c\",\r\n                    \"symbol\": {\"texts\" : [{\r\n                    \"text\": \"dkg\",\r\n                    \"language\": \"62135a9af63f263450d16bb6\"\r\n                    }]},\r\n                    \"coefficient\": {\r\n                        \"numerator\": 1,\r\n                        \"denominator\": 3\r\n                    },\r\n                    \"offset\": {\r\n                        \"numerator\": 1,\r\n                        \"denominator\": 3\r\n                    },\r\n  \"names\":       \r\n   [{\"texts\" : [{\r\n          \"text\": \"fkg\",\r\n          \"language\": \"62135a9af63f263450d16bb6\"\r\n      }]}\r\n   ],\r\n   \"symbols\":[],\r\n   \"quantityKinds\":[],\r\n   \"majorVersion\" : 1,\r\n  \"minorVersion\": 34,\r\n  \"dateOfCreation\": \"20220222\" \r\n}",
+							"raw": "{\r\n\t\"scale\": \"LINEAR\",\r\n\t\"base\": \"TEN\",\r\n\t\"dimension\": \"621c080771e57cca8831f00c\",\r\n\t\"symbol\": {\r\n\t\t\"texts\": [\r\n\t\t\t{\r\n\t\t\t\t\"text\": \"dkg\",\r\n\t\t\t\t\"language\": \"62135a9af63f263450d16bb6\"\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"coefficient\": {\r\n\t\t\"numerator\": 1,\r\n\t\t\"denominator\": 3\r\n\t},\r\n\t\"offset\": {\r\n\t\t\"numerator\": 1,\r\n\t\t\"denominator\": 3\r\n\t},\r\n\t\"names\": [\r\n\t\t{\r\n\t\t\t\"texts\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"text\": \"fkg\",\r\n\t\t\t\t\t\"language\": \"62135a9af63f263450d16bb6\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t],\r\n\t\"symbols\": [],\r\n\t\"quantityKinds\": [],\r\n\t\"majorVersion\": 1,\r\n\t\"minorVersion\": 34,\r\n\t\"dateOfCreation\": \"20220222\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -941,14 +998,20 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/api/unitOfWork/62dfdd152885d32e549f7a00",
+							"raw": "{{BASE_URL}}/api/unitOfWork/:unitOfWorkId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"unitOfWork",
-								"62dfdd152885d32e549f7a00"
+								":unitOfWorkId"
+							],
+							"variable": [
+								{
+									"key": "unitOfWorkId",
+									"value": "62dfdd152885d32e549f7a00"
+								}
 							]
 						}
 					},
@@ -961,7 +1024,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Workspace test\",\r\n  \"owner\": \"627b843411765c3ab43a6794\",\r\n  \"dictionary\": \"62dd937cc38dcf31b053752d\",\r\n  \"createdBy\": \"627b843411765c3ab43a6794\",\r\n  \"createdDate\": \"2022-08-23T10:14:28.268Z\",\r\n  \"lastModifiedBy\": null,\r\n  \"lastModifiedDate\": null\r\n}",
+							"raw": "{\r\n\t\"name\": \"Workspace test\",\r\n\t\"owner\": \"627b843411765c3ab43a6794\",\r\n\t\"dictionary\": \"62dd937cc38dcf31b053752d\",\r\n\t\"createdBy\": \"627b843411765c3ab43a6794\",\r\n\t\"createdDate\": \"2022-08-23T10:14:28.268Z\",\r\n\t\"lastModifiedBy\": null,\r\n\t\"lastModifiedDate\": null\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -988,7 +1051,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Workspace test 1\",\r\n  \"owner\": \"627b843411765c3ab43a6794\",\r\n  \"dictionary\": \"62dd937cc38dcf31b053752d\",\r\n  \"createdBy\": \"627b843411765c3ab43a6794\",\r\n  \"createdDate\": \"2022-08-23T10:14:28.268Z\",\r\n  \"lastModifiedBy\": null,\r\n  \"lastModifiedDate\": null\r\n}",
+							"raw": "{\r\n\t\"name\": \"Workspace test 1\",\r\n\t\"owner\": \"627b843411765c3ab43a6794\",\r\n\t\"dictionary\": \"62dd937cc38dcf31b053752d\",\r\n\t\"createdBy\": \"627b843411765c3ab43a6794\",\r\n\t\"createdDate\": \"2022-08-23T10:14:28.268Z\",\r\n\t\"lastModifiedBy\": null,\r\n\t\"lastModifiedDate\": null\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -996,14 +1059,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/api/unitOfWork/62dfdd152885d32e549f7a00",
+							"raw": "{{BASE_URL}}/api/unitOfWork/:unitOfWorkId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"unitOfWork",
-								"62dfdd152885d32e549f7a00"
+								":unitOfWorkId"
+							],
+							"variable": [
+								{
+									"key": "unitOfWorkId",
+									"value": "62dfdd152885d32e549f7a00"
+								}
 							]
 						}
 					},
@@ -1024,14 +1093,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/api/unitOfWork/62dfdd152885d32e549f7a00",
+							"raw": "{{BASE_URL}}/api/unitOfWork/:unitOfWorkId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"unitOfWork",
-								"62dfdd152885d32e549f7a00"
+								":unitOfWorkId"
+							],
+							"variable": [
+								{
+									"key": "unitOfWorkId",
+									"value": "62dfdd152885d32e549f7a00"
+								}
 							]
 						}
 					},
@@ -1044,7 +1119,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"string\",\r\n    \"explanation\": \"string\"\r\n}",
+							"raw": "{\r\n\t\"id\": \"string\",\r\n\t\"explanation\": \"string\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1094,14 +1169,20 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/api/changeRequest/62dfd6b02885d32e549f74d4",
+							"raw": "{{BASE_URL}}/api/changeRequest/:changeRequestId",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"changeRequest",
-								"62dfd6b02885d32e549f74d4"
+								":changeRequestId"
+							],
+							"variable": [
+								{
+									"key": "changeRequestId",
+									"value": "62dfd6b02885d32e549f74d4"
+								}
 							]
 						}
 					},
@@ -1114,7 +1195,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"names\": [\r\n    {\r\n      \"uniqueId\": null,\r\n      \"texts\": [\r\n        {\r\n          \"text\": \"Workjur\",\r\n          \"language\": null,\r\n          \"uniqueId\": null\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"nature\": \"XTD_MERGING\",\r\n  \"requestExternalStatus\": \"XTD_PENDING_ASSIGNEMENT\",\r\n  \"applicant\": \"627b843411765c3ab43a6794\",\r\n  \"newProperties\": [],\r\n  \"newSubjects\": [\r\n    \"6304a63cb6a6282ce4c19da7\",\r\n    \"6304a646b6a6282ce4c19ddf\"\r\n  ],\r\n  \"newObjects\": [],\r\n  \"expertsWithStatus\": [],\r\n  \"applicantExplanation\": {\r\n    \"uniqueId\": \"565dce39-ef61-4e53-986b-9c26de63578d\",\r\n    \"texts\": [\r\n      {\r\n        \"text\": \"Explanation\",\r\n        \"language\": null,\r\n        \"uniqueId\": \"a45c9ecd-f799-43cc-9a30-855d535e6f24\"\r\n      }\r\n    ]\r\n  },\r\n  \"createdDate\": \"2022-08-23T10:05:08.860Z\",\r\n  \"majorVersionDate\": \"Tue Aug 23 2022\",\r\n  \"majorVersion\": 1,\r\n  \"minorVersionDate\": \"Tue Aug 23 2022\",\r\n  \"minorVersion\": 1,\r\n  \"dictionary\": \"62dd937cc38dcf31b053752d\",\r\n  \"areasOfExpertise\": []\r\n}",
+							"raw": "{\r\n\t\"names\": [\r\n\t\t{\r\n\t\t\t\"uniqueId\": null,\r\n\t\t\t\"texts\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"text\": \"Workjur\",\r\n\t\t\t\t\t\"language\": null,\r\n\t\t\t\t\t\"uniqueId\": null\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t],\r\n\t\"nature\": \"XTD_MERGING\",\r\n\t\"requestExternalStatus\": \"XTD_PENDING_ASSIGNEMENT\",\r\n\t\"applicant\": \"627b843411765c3ab43a6794\",\r\n\t\"newProperties\": [],\r\n\t\"newSubjects\": [\r\n\t\t\"6304a63cb6a6282ce4c19da7\",\r\n\t\t\"6304a646b6a6282ce4c19ddf\"\r\n\t],\r\n\t\"newObjects\": [],\r\n\t\"expertsWithStatus\": [],\r\n\t\"applicantExplanation\": {\r\n\t\t\"uniqueId\": \"565dce39-ef61-4e53-986b-9c26de63578d\",\r\n\t\t\"texts\": [\r\n\t\t\t{\r\n\t\t\t\t\"text\": \"Explanation\",\r\n\t\t\t\t\"language\": null,\r\n\t\t\t\t\"uniqueId\": \"a45c9ecd-f799-43cc-9a30-855d535e6f24\"\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"createdDate\": \"2022-08-23T10:05:08.860Z\",\r\n\t\"majorVersionDate\": \"Tue Aug 23 2022\",\r\n\t\"majorVersion\": 1,\r\n\t\"minorVersionDate\": \"Tue Aug 23 2022\",\r\n\t\"minorVersion\": 1,\r\n\t\"dictionary\": \"62dd937cc38dcf31b053752d\",\r\n\t\"areasOfExpertise\": []\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1149,7 +1230,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "  {\r\n  \"searchText\" : \"Coils may also be used\",\r\n  \"searchInDomain\": true,\r\n  \"searchInObject\": true,\r\n  \"searchInAreaOfExpertise\": true,\r\n  \"searchInProperty\": true,\r\n  \"searchInNames\": true,\r\n  \"searchInDefinition\": true,\r\n  \"searchInDescription\": true,\r\n  \"searchOldVersions\": false,\r\n  \"dictionaryId\": null\r\n  }",
+							"raw": "{\r\n\t\"searchText\": \"Coils may also be used\",\r\n\t\"searchInDomain\": true,\r\n\t\"searchInObject\": true,\r\n\t\"searchInAreaOfExpertise\": true,\r\n\t\"searchInProperty\": true,\r\n\t\"searchInNames\": true,\r\n\t\"searchInDefinition\": true,\r\n\t\"searchInDescription\": true,\r\n\t\"searchOldVersions\": false,\r\n\t\"dictionaryId\": null\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1182,7 +1263,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "  {\r\n  \"searchText\" : \"Coils may also be used\",\r\n  \"searchInDomain\": true,\r\n  \"searchInObject\": true,\r\n  \"searchInAreaOfExpertise\": true,\r\n  \"searchInProperty\": true,\r\n  \"searchInNames\": true,\r\n  \"searchInDefinition\": true,\r\n  \"searchInDescription\": true,\r\n  \"searchOldVersions\": false,\r\n  \"dictionaryId\": null\r\n  }",
+							"raw": "{\r\n\t\"searchText\": \"Coils may also be used\",\r\n\t\"searchInDomain\": true,\r\n\t\"searchInObject\": true,\r\n\t\"searchInAreaOfExpertise\": true,\r\n\t\"searchInProperty\": true,\r\n\t\"searchInNames\": true,\r\n\t\"searchInDefinition\": true,\r\n\t\"searchInDescription\": true,\r\n\t\"searchOldVersions\": false,\r\n\t\"dictionaryId\": null\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1241,11 +1322,11 @@
 	"variable": [
 		{
 			"key": "BASE_URL",
-			"value": "http://151.80.27.24:3000"
+			"value": "https://151.80.27.24:3000"
 		},
 		{
 			"key": "JWT",
-			"value": "[TokenNeedToBeReplaced]"
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJncm91cHMiOlsiNjMzMWMxNmVkYWNkOTZlNzZlNjIzYzEyIiwiNjMzMWMxNmVkYWNkOTZlNzZlNjIzYzI1Il0sImZhdm9yaXRlcyI6W10sImFjdGl2ZSI6dHJ1ZSwiYXJlYXNPZkV4cGVydGlzZSI6W10sIl9pZCI6IjYzMzBjNzI5ZTVmZmU1NjRjMDYyMTRhZSIsInVuaXF1ZUlkIjoiY2U1ZjFhZjgtNjM0OC00MjAyLTliN2ItYjk5ZDkxZjNiMWE4IiwibG9naW4iOiJ5b3VzaGVuZy53YW5nQGJzZnJhbmNlLm9yZyIsImZpcnN0TmFtZSI6IllvdXNoZW5nIiwibGFzdE5hbWUiOiJXQU5HIiwiZW1haWwiOiJ5b3VzaGVuZy53YW5nQGJzZnJhbmNlLm9yZyIsImNvbXBhbnkiOiJidWlsZGluZ1NNQVJUIEZyYW5jZSIsInBvc2l0aW9uIjoiIiwiY3JlYXRlZEJ5IjoiNjMyZDdjYTNjOTc1OTE2MWIwYzJhMzk1IiwiY3JlYXRlZERhdGUiOiIyMDIyLTA5LTI1VDIxOjI0OjU3LjEzN1oiLCJsYXN0TW9kaWZpZWRCeSI6IjYzMzBjNzI5ZTVmZmU1NjRjMDYyMTRhZSIsImxhc3RNb2RpZmllZERhdGUiOiIyMDIyLTA5LTI3VDA2OjQ3OjUyLjkyMFoiLCJsYXN0Q29ubmVjdGlvbiI6IjIwMjItMDktMjdUMDY6NDY6NTcuNzUwWiIsIl9fdiI6MCwiZXhwIjoxNjY5NDUzMDY0LCJpYXQiOjE2NjQyNjkwNjR9.TXRULw7FMSJswl14awTrs-QXtz_NWaLeI7kArCztprM"
 		}
 	]
 }
